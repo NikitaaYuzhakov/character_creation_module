@@ -1,11 +1,13 @@
+"""Этот код позволяет играть в игру (искатель приключений!)."""
 from random import randint
 from graphic_arts.start_game_banner import run_screensaver
 
 
 def attack(char_name, char_class):
-    mag = "нанёс урон противнику равный"
+    """Описывает работу функции связанную с атакой персонажа."""
+    mag = 'нанёс урон противнику равный'
     if char_class == 'warrior':
-        return (f"{char_name} {mag} {5 + randint(3, 5)}")
+        return (f'{char_name} {mag} {5 + randint(3, 5)}')
     if char_class == 'mage':
         return (f'{char_name} {mag} {5 + randint(5, 10)}')
     if char_class == 'healer':
@@ -13,6 +15,7 @@ def attack(char_name, char_class):
 
 
 def defence(char_name, char_class):
+    """Фунцкия выбора имени и класса персонажа."""
     if char_class == 'warrior':
         return (f'{char_name} блокировал {10 + randint(5, 10)} урона')
     if char_class == 'mage':
@@ -22,7 +25,8 @@ def defence(char_name, char_class):
 
 
 def special(char_name, char_class):
-    mag = "применил специальное умение"
+    """Описывает работу одной из 3 команд: атаку, защиту, суперсилу."""
+    mag = 'применил специальное умение'
     if char_class == 'warrior':
         return (f'{char_name} {mag} «Выносливость {80 + 25}»')
     if char_class == 'mage':
@@ -32,6 +36,7 @@ def special(char_name, char_class):
 
 
 def start_training(char_name, char_class):
+    """Описание класса персонажа + тренировка."""
     if char_class == 'warrior':
         print(f'{char_name}, ты Воитель — отличный боец ближнего боя.')
     if char_class == 'mage':
@@ -57,6 +62,7 @@ def start_training(char_name, char_class):
 
 
 def choice_char_class():
+    """Описание персанжа и краткое содержание по ним."""
     approve_choice = None
     char_class = None
     while approve_choice != 'y':
